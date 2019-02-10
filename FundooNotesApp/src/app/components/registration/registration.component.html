@@ -1,0 +1,91 @@
+<html>
+    {{registrationForm.value | json}}
+<div class="forMedia">
+  <!-- registration form -->
+  <form [formGroup]="registrationForm" (ngSubmit)="register()">
+    <div fxLayout="column" fxLayoutAlign="space-around center">
+      <!-- material card  -->
+      <mat-card class="example-card">
+        <!-- card header -->
+        <mat-card-header class="example-header">
+          <!-- card title -->
+          <mat-card-title class="example-name-main">FUNDOO NOTES APP</mat-card-title>
+          <!--card subtitle  -->
+          <mat-card-subtitle class="example-name">Create Account</mat-card-subtitle>
+
+          <!-- end of subtitle -->
+        </mat-card-header>
+        <!-- end of header -->
+        <div class="example-container">
+
+          <div class="example-align">
+            <!-- firstname -->
+            <mat-form-field appearance="outline">
+                <mat-label>Firstname</mat-label>
+                <input formControlName="firstName" matInput placeholder="Firstname" required>
+                
+              </mat-form-field>
+
+            <!-- lastname -->
+            
+            <mat-form-field appearance="outline">
+                <mat-label>Lastname</mat-label>
+                <input formControlName="lastName" matInput placeholder="Lastname" required>
+                
+              </mat-form-field>
+          </div>
+          <!-- phonenumber -->
+          <mat-form-field appearance="outline">
+            <mat-label>Phonenumber</mat-label>
+            <input type="text" matInput placeholder="Phonenumber" formControlName="phoneNumber" required>
+
+          </mat-form-field>
+
+
+          <!-- email -->
+          <mat-form-field appearance="outline">
+            <mat-label>Email</mat-label>
+            <input type="email" matInput placeholder="email : username.test.com" formControlName="email" required />
+
+          </mat-form-field>
+          <!-- password -->
+          <div class="example-align">
+            <mat-form-field appearance="outline">
+              <mat-label>Password</mat-label>
+              <input formControlName="password" matInput placeholder="Enter your password"
+                [type]="hide ? 'password' : 'text'" required />
+
+
+            </mat-form-field>
+            <!-- confirm password -->
+            <mat-form-field appearance="outline">
+              <mat-label>Confirm Password</mat-label>
+              <input formControlName="confirmPassword" matInput placeholder="Enter your password"
+                [type]="hide ? 'password' : 'text'" required>
+
+
+            </mat-form-field>
+          </div>
+
+          <!-- service type -->
+          <mat-radio-group class="example-radio"> <a>Service Type : </a>
+            <mat-radio-button value="basic">Basic</mat-radio-button>
+            <mat-radio-button value="advance">Advance</mat-radio-button>
+          </mat-radio-group>
+          <mat-card-actions class="example-button">
+            <button mat-button routerLink="/login" class="name-link">sign in instead</button>
+            <button [disabled]="loading" type="submit" aria-label="Show an example snack-bar" mat-raised-button
+              class="button-colour"><a class="button-name">SIGN UP</a></button>
+
+
+          </mat-card-actions>
+        </div>
+
+      </mat-card>
+      <!-- end of material card -->
+    </div>
+  </form>
+  <!-- end of form -->
+</div>
+
+</html>

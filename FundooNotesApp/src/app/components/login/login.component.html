@@ -1,0 +1,57 @@
+<html>
+{{loginForm.value | json}}
+
+<body>
+  <!-- login form -->
+  <form [formGroup]="loginForm" (ngSubmit)="login()">
+    <div fxLayout="column" fxLayoutAlign="space-around center">
+      <!-- material card -->
+      <mat-card class="example-card">
+        <!-- card header -->
+        <mat-card-header class="example-header">
+          <!-- card title -->
+          <mat-card-title class="example-name-main">FUNDOO NOTES APP</mat-card-title>
+          <!-- card subtitle -->
+          <mat-card-subtitle class="example-name">SIGN IN</mat-card-subtitle>
+
+          <!-- end of subtitle -->
+        </mat-card-header>
+        <!-- end of card header -->
+        <div class="example-container">
+          <!-- email/username -->
+          <mat-form-field appearance="outline">
+            <mat-label>Email</mat-label>
+            <input type="email" matInput placeholder="email : username.test.com" formControlName="email" required />
+
+          </mat-form-field>
+          <!-- password -->
+          <mat-form-field appearance="outline">
+            <mat-label>Password</mat-label>
+            <input formControlName="password" matInput placeholder="Enter your password"
+              [type]="hide ? 'password' : 'text'" required />
+
+
+          </mat-form-field>
+          <!-- card footer -->
+          <mat-card-footer>
+            <!-- reset password link -->
+            <mat-card-subtitle class="example-name-link" routerLink="/resetpassword">forgot password?
+            </mat-card-subtitle>
+          </mat-card-footer>
+          <mat-card-actions class="example-button">
+            <!-- registration button -->
+            <button mat-button class="name-link" routerLink="/registration">Register Here</button>
+            <!-- login button -->
+            <button [disabled]="loading" type="submit" aria-label="Show an example snack-bar" mat-raised-button
+              class="button-colour"><a class="button-name">SIGN IN</a></button>
+          </mat-card-actions>
+
+        </div>
+        <!-- end of material card -->
+      </mat-card>
+    </div>
+    <!-- end of form -->
+  </form>
+</body>
+
+</html>
